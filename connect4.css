@@ -177,11 +177,16 @@ button:active{
 }
 
 #column-top td:hover {
-  background-color: #b2ffffd5;
+  background-color: #c000c0;
   filter: blur(1px);
   filter: drop-shadow(0 0 10px #c8ffffd5);
   border: solid 2px white;
   border-radius: 50%;
+  transition: all .55s;
+}
+
+#column-top.player2 td:hover {
+  background-color: #00b3fe;
   transition: all .55s;
 }
 

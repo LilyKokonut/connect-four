@@ -12,7 +12,7 @@ debug
 
 
 css touch up
-2h
+4h
 
 
-total: 4h
+total: 6h

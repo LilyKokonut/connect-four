@@ -20,7 +20,6 @@ function formSubmit(e){
         makeBoard();
         makeHtmlBoard();
         e.target.parentElement.innerHTML = '';
-        
       } else {
         alert("Oh no! It looks like something is wrong with your game dimension:(  please try again and make sure the dimension is no larger than 15 x 15 and no less than 4 x 4");
         form.reset();
@@ -139,8 +138,15 @@ function handleClick(evt) {
     endGame(`We have no winner today.`);
   }
 
-  // switch players
+  // switch players and update the hover color of the top row
+  // let temp = `player${currPlayer}`;
+
   currPlayer = currPlayer === 1 ?  2 : 1;
+  let topRow= document.querySelector("#column-top");
+  topRow.classList.toggle('player2');
+  // let topRow= document.querySelector("#column-top");
+  // topRow.classList.toggle(temp);
+  // topRow.classList.toggle(`player${currPlayer}`);
 }
 
 /** checkForWin: check board cell-by-cell for "does a win start here?" */
@@ -211,14 +217,11 @@ function checkForWin() {
       }
 
       let allDirs = [dir1, dir2, dir3, dir4];
-      let tie = allDirs.find(dir => dir.every(val => val === 1)) ||
-                      allDirs.find(dir => dir.every(val => val === 2));
-        if (tie){
-          return tie;
+      let checktie = allDirs.some(dir => dir.every(val => val === currPlayer));
+        if (checktie){
+          return true;
         }
-      
     }
   }
-
 }
 
