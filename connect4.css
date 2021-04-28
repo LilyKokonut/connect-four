@@ -1,0 +1,199 @@
+:root{
+--darkpurple: #7700a6;
+--purple: #fe00fe;
+--yello: #defa47;
+--blue: #00b3fe;
+--darkblue: #0016ee;
+}
+
+*{
+  font-family: 'Audiowide', 'cursive';
+  text-align: center;
+}
+
+body{
+  width: 100%;
+}
+
+html{
+  height: 100%;
+  margin: 0;
+  background-image: url(prr.png);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+h1{
+  height: 7rem;
+  padding: 0 0 0;
+  margin: 0;
+  display: block;
+  font-size: 4.5rem;
+  text-shadow: 3px 3px 1.1px #00b3fe;
+  color: #fe00fe;
+}
+
+h1:hover{
+  font-size: 5rem;
+  color: #FFFFFF;
+  text-shadow: 0 0 5px #FFF, 0 0 10px #FFF, 0 0 15px #FFF, 0 0 20px #defa47, 0 0 30px #defa47, 0 0 40px #defa47, 0 0 55px #defa47, 0 0 75px #defa47;
+  color: #FFFFFF;
+  transition: all 0.2s;
+}
+
+form{
+  display: flex;
+  justify-content: center;
+  margin-bottom: 2rem;
+  text-shadow: 1.3px 1.3px 1.5px #fe00fe;
+  color: #00b3fe;
+  font-size: 2rem;
+  height: 3rem;
+}
+
+form.hidden{
+  display: none;
+}
+
+input{
+  margin-left: 1rem;
+  margin-right: 1rem;
+  outline: none;
+  background-color: transparent;
+  border-top: transparent;
+  border-left: transparent;
+  border-right: transparent;
+  border-color: #13678b;
+  display: inline-block;
+  padding: 0px;
+  text-align: center;
+  height: inherit;
+  font-size: inherit;
+  width: 5rem;
+  text-shadow: 1.3px 1.3px 1.5px #fe00fe;
+  color: #afc438;
+}
+
+form input::placeholder{
+  font-size: 1.5rem;
+  color:#22749780;
+  text-shadow: none;
+}
+
+form input:focus::placeholder{
+  font-size: 2px;
+  color: transparent;
+  text-shadow: none;
+  transition: all .5s;
+}
+
+button{
+  border-radius: 20%;
+  background-color: #d610d6; 
+  border-color: transparent;
+  box-shadow: 0 3px #c2d843 ;
+  color: white;
+  font-size: 1.4rem;
+}
+
+button:hover{
+  color: #defa47;
+  background-color: #00b3fe;
+}
+
+button:active{
+  transform: translateY(2.5px);
+  box-shadow: 0 0.5px  #c2d843;
+  transition: all .1s;
+}
+
+#players{
+  display:flex;
+}
+
+#game-wrapper{
+  height: 400px;
+  width: 400px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  border-radius: 5%;
+}
+
+#game{
+  cursor:pointer;
+  background-color: transparent;
+  position: relative;
+}
+
+#board td {
+  width: 50px;
+  height: 50px;
+  border: solid 1px #666;
+}
+
+.cell{
+  background-color: #defa47;
+  background-color: #191d06;
+  border-radius: 20%;
+  margin: 5px;
+}
+
+.cell:hover{
+  border-radius: 30%;
+  transition: border-radius .2s;
+}
+
+.piece{
+  /* TODO: make into circles */
+  margin: 0px auto;
+  width: 75%;
+  height: 75%;
+  border-radius: 50%;
+  position: relative;
+  animation: freefall 1s ease-in-out forwards; 
+}
+
+/* TODO: make pieces red/blue,  depending on player 1/2 piece */
+.p1{
+  background-color: #c000c0;
+  filter: drop-shadow(0 0 2px #fe00fe);
+  border: solid 3px white;
+}
+
+.p2{
+  background-color: #00b3fe;
+  filter: drop-shadow(0 0 2px #00b3fe);
+  border: solid 3px white;
+}
+/* column-top is table row of clickable areas for each column */
+
+#column-top td {
+  border-radius: 20%;
+  border: dashed 2px lightgray;
+  margin: 6px;
+}
+
+#column-top td:hover {
+  background-color: #b2ffffd5;
+  filter: blur(1px);
+  filter: drop-shadow(0 0 10px #c8ffffd5);
+  border: solid 2px white;
+  border-radius: 50%;
+  transition: all .55s;
+}
+
+#column-top td:active{
+  border: solid 2px transparent;
+  background-color: inherit;
+  transition: all .25s;
+}
+
+@keyframes freefall {
+  100% {
+    transform: translateY(0px);
+  }
+};
+
