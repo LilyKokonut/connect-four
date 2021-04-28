@@ -139,14 +139,9 @@ function handleClick(evt) {
   }
 
   // switch players and update the hover color of the top row
-  // let temp = `player${currPlayer}`;
-
   currPlayer = currPlayer === 1 ?  2 : 1;
   let topRow= document.querySelector("#column-top");
   topRow.classList.toggle('player2');
-  // let topRow= document.querySelector("#column-top");
-  // topRow.classList.toggle(temp);
-  // topRow.classList.toggle(`player${currPlayer}`);
 }
 
 /** checkForWin: check board cell-by-cell for "does a win start here?" */
