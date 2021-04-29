@@ -16,7 +16,7 @@ function formSubmit(e){
       WIDTH = parseInt(document.getElementById("width").value) || 6;
       HEIGHT = parseInt(document.getElementById("height").value) ||6;
       if (WIDTH >= 4 && WIDTH <= 15 && HEIGHT >= 4 && HEIGHT <= 15){
-        // e.target.parentElement.classList.add("hidden");
+        e.target.parentElement.classList.add("hidden");
         makeBoard();
         makeHtmlBoard();
         e.target.parentElement.innerHTML = '';
@@ -206,7 +206,7 @@ function checkForWin() {
       }
 
       try {
-        dir4 = [board[a][b], board[a+1][b+1], board[a+2][a+2], board[a+3][a+3]];
+        dir4 = [board[a][b], board[a+1][b+1], board[a+2][b+2], board[a+3][b+3]];
       } catch (TypeError){
          dir4 = [null];
       }

@@ -52,10 +52,6 @@ form{
   height: 3rem;
 }
 
-form.hidden{
-  display: none;
-}
-
 input{
   margin-left: 1rem;
   margin-right: 1rem;
